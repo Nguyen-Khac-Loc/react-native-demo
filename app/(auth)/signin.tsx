@@ -14,7 +14,7 @@ export default function SignIn() {
 	const [isPasswordVisible, setPasswordVisible] = useState(false);
 	const handleLogin = async () => {
 		try {
-			const response = await axios.get("http://192.168.0.102:3000/users");
+			const response = await axios.get(`http://${process.env.IP}:3000/users`);
 			// const response = await axios.get("http://172.20.160.1:3000/users");
 			const users = response.data;
 			const user = await users.find(
